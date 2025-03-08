@@ -1,0 +1,1 @@
+# Build nested routes for a resource hierarchy
