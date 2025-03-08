@@ -49,9 +49,7 @@ Here's how to set up your project structure for the URL shortener:
 ```
 challenges/
 ├── urlshortener/
-│   ├── shortenerController.js  (URL shortener logic)
-│   ├── shortenerRouter.js      (URL shortener routes)
-│   └── urlStore.js             (data storage for URLs)
+│   ├── urlshortenerController.js  (URL shortener logic)
+│   ├── urlshortenerRouter.js      (URL shortener routes)
+│   └── urlshortener.js             (data storage for URLs)
 ```
-
-Would you like me to help you implement any specific part of this structure first? I can provide code examples for each step.
