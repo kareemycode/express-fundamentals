@@ -1,5 +1,5 @@
 import express from 'express'
-import { usernameController } from './controller.js';
+import router from './router.js';
 
 const app = express();
 const PORT = 3000;
@@ -8,7 +8,7 @@ app.get('/', (req, res)=>{
     res.send('Hello Kareemy');
 })
 
-app.get('/user/:username', usernameController)
+app.use('/user', router)
 
 app.listen(PORT, ()=>{
     console.log(`Server is running on http://localhost:${PORT}`)

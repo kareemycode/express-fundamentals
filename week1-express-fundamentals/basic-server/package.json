@@ -1,17 +1,17 @@
 {
   "name": "express-app",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "basicserver.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon basicserver.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
-  "description": "",
   "dependencies": {
     "express": "^4.21.2",
     "nodemon": "^3.1.9"
-  }
+  },
+  "description": ""
 }

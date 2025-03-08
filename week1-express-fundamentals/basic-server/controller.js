@@ -1,4 +1,7 @@
-export const usernameController = (req, res)=>{
-    const username = req.params.username
-    res.send(`Hello ${username}`)
+export const userLogin = (req, res) => {
+    res.send('This is User Login')
+}
+
+export const userSignup = (req, res) => {
+    res.send('This is User Signup')
 }
