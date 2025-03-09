@@ -1,4 +1,8 @@
-const urls = new Map()
+import isURL from "validator/lib/isURL.js";
+
+const BaseURL = "http://localhost:3000/url/"
+
+let urls = new Map()
 
 const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
@@ -15,22 +19,36 @@ const getRandomSlug = ()=>{
 
 
 export const convertURL = (req, res)=>{
-    if (!req.body.slug){
+    const {url, slug} = req.body;
+
+    if (!url || !isURL(url)){
+        return res.status(400).json({ error: "Invalid URL format" });
+    }
+
+    if (!slug){
         let randomSlug = getRandomSlug();
-        console.log(randomSlug);
-        urls.set(randomSlug, req.body.url);
-        res.send(`Url converted successfully
-            Your new URL is http://localhost:3000/url/${randomSlug}
-            `);
+        do{
+            randomSlug = getRandomSlug();
+        } while (urls.has(randomSlug))
+
+        urls.set(randomSlug, url);
+        return res.status(201).json({
+            "message": "URL converted successfully",
+            "shortURL": `${BaseURL}${randomSlug}`,
+            "originalURL": url
+            });
     } else {
-        if (urls.has(req.body.slug)){
-            res.status(400).send("Slug already in use");
+        let userSlug = slug.replace(/\s+/g, '-').toLowerCase();
+        if (!urls.has(userSlug)){
+            urls.set(userSlug, url);
+            return res.status(201).json({
+                "message": "URL converted successfully",
+                "shortURL": `${BaseURL}${userSlug}`,
+                "originalURL": url
+                });
+            
         } else {
-            let userSlug = req.body.slug.replace(/\s+/g, '-').toLowerCase();
-            urls.set(userSlug, req.body.url);
-            res.send(`Url converted successfully
-                Your new URL is http://localhost:3000/url/${userSlug}
-                `);
+            return res.status(400).json({error: "Slug already in use"});
         }
     }
 }
@@ -40,7 +58,7 @@ export const redirectURL = (req, res)=>{
     if (urls.has(slug)){
         res.status(200).redirect(urls.get(slug))
     } else {
-        res.status(400).send(`${slug} Not found, please enter a valid slug`)
+        res.status(404).json({error: `${slug} Not found`})
     }
     
 }

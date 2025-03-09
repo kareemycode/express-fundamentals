@@ -1,5 +1,5 @@
 import express from 'express';
-import urlRouter from './urlshortnerRouter.js';
+import urlRouter from './urlshortenerRouter.js';
 const app = express();
 const PORT = 3000;
 
