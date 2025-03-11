@@ -1,10 +1,14 @@
 import express from 'express'
-import { convertURL, redirectURL } from './urlshortenerController.js'
+import { convertURL, getUserURLs, redirectURL } from './urlshortenerController.js'
 
 const urlRouter = express.Router()
 
-urlRouter.post('/convert', convertURL)
+urlRouter.get('/:username', getUserURLs)
 
-urlRouter.get('/:slug', redirectURL)
+urlRouter.post('/:username/convert', convertURL)
+
+urlRouter.get('/:username/:slug', redirectURL)
+
+
 
 export default urlRouter
