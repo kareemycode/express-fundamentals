@@ -56,12 +56,11 @@ export const convertURL = (req, res)=>{
             let randomSlug = getRandomSlug();
             do{
                 randomSlug = getRandomSlug();
-            } while (users.has(randomSlug));
-
-            users[username].push({
-                'slug': slug,
-                'url': url
-            });
+                users[username].push({
+                    'slug': randomSlug,
+                    'url': url
+                });
+            } while (!users[username].some(item => item['slug'] == randomSlug));
 
             return res.status(201).json({
                 "message": "URL converted successfully",
