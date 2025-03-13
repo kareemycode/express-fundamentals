@@ -1,6 +1,6 @@
 import isURL from "validator/lib/isURL.js";
 
-const BaseURL = `http://localhost:3000/`
+const BaseURL = `http://localhost:3000/url/`
 
 let users = {}
 
@@ -24,7 +24,7 @@ const getRandomSlug = ()=>{
         randomSlug += characters.charAt(Math.floor(Math.random() * characters.length));
         counter += 1;
     }
-    return randomSlug;
+    return randomSlug.toLowerCase();
 }
 
 
@@ -98,17 +98,21 @@ export const convertURL = (req, res)=>{
 export const redirectURL = (req, res)=>{
     let username = req.params.username;
     let slug = req.params.slug;
-
-    if (users[username].some(item => slug in item)){
-        // Find the object containing the slug
-        const urlObject = users[username].find(item => slug in item);
-
-        // Get the URL value from the object
-        const url = urlObject[slug];
-
-        res.status(200).redirect(url)
-    } else {
-        res.status(404).json({error: `${slug} Not found`})
-    }
+    slug = slug.replace(/\s+/g, '-').toLowerCase()
     
+    if (users[username]){
+
+        if (users[username].some(item => item['slug'] == slug)){
+            // Find the object containing the slug
+            const urlObject = users[username].find(item => item['slug'] == slug);
+            // Get the URL value from the object
+            const url = urlObject["url"];
+            res.status(200).redirect(url)
+        } else {
+            res.status(404).json({error: `${slug} Not found`})
+        }
+    } else{
+        res.status(404).json({error: `${username} Not found`})
+    }
+   
 }
