@@ -75,8 +75,7 @@ export const convertURL = (req, res)=>{
             let userSlug = slug.replace(/\s+/g, '-').toLowerCase();
 
             //check if the slug is already in use by the user
-            if (!users[username].some(item => slug in item)){
-
+            if (!users[username].some(item => item['slug'] == slug)){
                 users[username].push({
                     'slug': slug,
                     'url': url
