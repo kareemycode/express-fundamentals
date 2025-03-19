@@ -11,4 +11,6 @@ router.get('/signup', userSignup)
 
 router.get('/login', userLogin)
 
+router.post('/', createUser)
+
 export default router

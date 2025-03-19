@@ -15,85 +15,65 @@ Each week follows a Learn → Build → Expand → Solve pattern designed to cre
 ### Week 1: Express Fundamentals
 - **Theory (20%)**: Express introduction, setup, and routing fundamentals
 - **Practice (80%)**:
-  - **Project**: Basic Express Server
+  - **Following Along**: Building basic Express server by following tutorial
+  - **Key Concepts**: 
     - Creating properly structured Express applications
     - Implementing organized route files
     - Building dynamic routing with parameters
-  - **Problem-Solving Tasks**:
-    - URL shortener with custom slugs
-    - Route parameters validation
-    - Nested resource routes
 
 ### Week 2: HTTP Methods & Middleware
 - **Theory (20%)**: HTTP methods and middleware implementation
 - **Practice (80%)**:
-  - **Project**: Task Manager API
+  - **Following Along**: Expanding Express knowledge through tutorial implementation
+  - **Key Concepts**: 
     - CRUD operations with proper HTTP methods
-    - Custom authentication middleware
-    - Request validation middleware
-    - Logging middleware
-  - **Problem-Solving Tasks**:
-    - Rate limiting middleware
-    - Error handling middleware
-    - Request body sanitization
+    - Custom middleware development
+    - Request validation and error handling
 
 ### Week 3: Data Handling & Database
 - **Theory (20%)**: Templating, static files, form data, and database connections
 - **Practice (80%)**:
-  - **Project**: Blog Platform Backend
+  - **Following Along**: Implementing database connections and data handling
+  - **Key Concepts**: 
     - MongoDB integration with error handling
-    - Schemas for posts, users, and comments
-    - File upload functionality for blog images
-    - MongoDB query-based search functionality
-  - **Problem-Solving Tasks**:
-    - Pagination implementation for blog posts
-    - Category and tag filtering
-    - Database aggregation for statistics
+    - Schema design and implementation
+    - File upload functionality
+    - Query-based search functionality
 
 ### Week 4: Authentication & API Development
 - **Theory (20%)**: Cookies, sessions, authentication, and RESTful API design
 - **Practice (80%)**:
-  - **Project**: E-commerce API
+  - **Following Along**: Building authentication systems and complete APIs
+  - **Key Concepts**: 
     - JWT authentication implementation
     - User roles and permissions
-    - Complete product and order APIs
-    - Cart functionality with sessions
-  - **Problem-Solving Tasks**:
-    - OAuth authentication
-    - Refresh token mechanism
-    - Payment processing webhooks
+    - RESTful API design
+    - Session management
 
 ## Repository Structure
 
 ```
 /
-├── week1-express-fundamentals/
+├── express-course-server/
 │   ├── notes/           # Learning notes from videos
-│   ├── basic-server/    # Main project code
-│   └── challenges/      # Problem-solving tasks
-│
-├── week2-http-middleware/
-│   ├── notes/
-│   ├── task-manager-api/
-│   └── challenges/
-│
-├── week3-data-database/
-│   ├── notes/
-│   ├── blog-platform/
-│   └── challenges/
-│
-└── week4-auth-api/
-    ├── notes/
-    ├── ecommerce-api/
-    └── challenges/
+│   └── src/             # Code following along with the tutorial
+└── README.md            # Learning journey documentation
 ```
+
+## Projects Showcase
+
+Projects built using the knowledge from this learning journey are maintained in separate repositories:
+
+- [URL Shortener](https://github.com/kareemycode/express-url-shortener) - A URL shortening service with custom slugs
+- [Task Manager API](https://github.com/kareemycode/task-manager-api) - REST API for managing tasks
+- [Blog Platform](https://github.com/kareemycode/blog-platform) - Complete blog backend with MongoDB
+- [E-commerce API](https://github.com/kareemycode/ecommerce-api) - Full-featured e-commerce backend
 
 ## Progress Tracking
 
 I'll be updating this repository regularly with:
 - 📝 Notes from the learning material
-- 💻 Code for each project
-- 🧩 Solutions to the problem-solving tasks
+- 💻 Code examples from following the course
 - 🔄 Refactoring and improvements based on what I learn
 
 ## Resources
