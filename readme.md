@@ -54,17 +54,17 @@ Each week follows a Learn → Build → Expand → Solve pattern designed to cre
 
 ```
 /
-├── express-course-server/
-│   ├── notes/           # Learning notes from videos
-│   └── src/             # Code following along with the tutorial
-└── README.md            # Learning journey documentation
+├── src/              # Server source code
+├── notes/            # Learning notes from videos
+├── package.json
+└── README.md         # Learning journey documentation
 ```
 
 ## Projects Showcase
 
 Projects built using the knowledge from this learning journey are maintained in separate repositories:
 
-- [URL Shortener](https://github.com/kareemycode/express-url-shortener) - A URL shortening service with custom slugs
+- [URL Shortener](https://github.com/kareemycode/express-urlshortener) - A URL shortening service with custom slugs
 - [Task Manager API](https://github.com/kareemycode/task-manager-api) - REST API for managing tasks
 - [Blog Platform](https://github.com/kareemycode/blog-platform) - Complete blog backend with MongoDB
 - [E-commerce API](https://github.com/kareemycode/ecommerce-api) - Full-featured e-commerce backend
